@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Delagation Theory</title>
+    <url>/2025/03/14/Delagation-Theory/</url>
+    <content><![CDATA[Baird, Aaron, and Likoebe M. Maruping. “The Next Generation of Research on IS Use: A Theoretical Framework of Delegation to and from Agentic IS Artifacts.” MIS Quarterly 45, no. 1 (March 1, 2021): 315–41. https://doi.org/10.25300/MISQ/2021/15882.
+Presumption: the theoretical paradigm shift in the &#x3D;&#x3D;IS use&#x3D;&#x3D; research - from “treating the IS artifact as a passive tool” to “agentic IS artifacts“.
+Gap: The vast majority of IS use research, however, assumes that IS artifacts are tools that serve as a means to achieving a user’s ends.
+Core: 
+
+transferring rights and responsibilities for task execution and outcomes.
+This new generation of agentic IS artifacts is imbued with the capacity to learn, adapt, act autonomously, and be aware of the need to act without being prompted by users.
+
+]]></content>
+      <categories>
+        <category>MIS theories</category>
+      </categories>
+      <tags>
+        <tag>agent</tag>
+        <tag>IS-use</tag>
+        <tag>paradigm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Brand Positioning</title>
+    <url>/2025/03/27/Brand-Positioning/</url>
+    <content><![CDATA[
+]]></content>
+      <categories>
+        <category>Self-constructed models</category>
+      </categories>
+      <tags>
+        <tag>brand</tag>
+        <tag>strategy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>My 2015</title>
+    <url>/2015/03/31/My-2015/</url>
+    <content><![CDATA[我是一个典型的“中国式家长”抚养长大的孩子，小时候就开始“享受”所谓的“培优” - 书法，绘画，奥数，作文，英语。到了初中，项目就变成了语数外理化生。高二的时候选择了文科，政史地替代了理化生。在应试教育上，我算是“优胜者”。或许是受压迫太久了，在高考志愿中，除了华科，北外也上了志愿名单。2012年的秋天，我“如愿以偿”地去到了北京，一个崭新的地方。
+然而，大学第一年，我就厌学了。毅然决然地选择休学一年，但是为了有地方住而不用回到所谓的“家”，办理的是留级的手续。有意思的是，我的课程都踩着及格线通过了，不需要再考一遍。所以那一年，逐渐开始放飞自我。13-14年，我在图书馆里看着各式各样的书籍，从比较文学到诗词格律，从社会学到商业财务。
+14年的暑假，我被安排去一家绥芬河的俄罗斯酒店当服务员，美其名曰锻炼口语。那段日子，枯燥的生活让我十分挣扎。一周6天，每天9小时的工作，一个月1500的工资。对比我在北京当家教时，周末工作，100的时薪。在那一座中俄边境的小县城，我告诉自己，我要走得更远。回北京后，我开始准备ACCA的考试，并报名了相关的课程。也是在这一年秋天，我遇到了她。
+一路成长的经历让我只想远离自己的过去，组建自己的家庭。我太认真了，也太较真了。次年的春天，我们分开了。这场断崖式的分手，让我陷入了抑郁的沼泽。作息完全颠倒，不敢白天出门。暑期的时候，找到老师给我安排了出国交换的项目。目的地，符拉迪沃斯托克。
+]]></content>
+      <categories>
+        <category>Memory</category>
+      </categories>
+      <tags>
+        <tag>My-past</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Blog Deployment: Hexo Github-Pages</title>
+    <url>/2025/03/27/Deployment-Hexo-Github-Pages/</url>
+    <content><![CDATA[This article aims to introduce a method to deploy the personal blog based on Hexo, Github and Obisidian.
+
+Environment
+OS: windows
+Tools: Node.js, VS Code, git
+
+
+HexoDownload and install Node.js https://nodejs.org/enDownload and install git https://git-scm.com/downloads/winOpen the powershell or cmd and install Hexo, excute:
+npm install -g hexo-cli
+To initialize hexo:Create new folder named ‘xx-blog’ (whatever u like)Enter your blog folder, input cmd in the navigation barAlso, you can choose right click to Open Git Bash here and excute:
+hexo init
+If you meet the problem with network, like error: RPC failed; curl 28 OpenSSL SSL_read: Connection was reset, you can try to excute:
+git config --global http.sslVerify &quot;false&quot;
+After the initialization, you can try to choose a preferable theme from the official websitehttps://hexo.io/themes/Download the theme and put the decompressed content into the folder themes.There are two places to be modified to make your theme working.Firstly, you should change the theme name in _config.yml:
+theme: landscape -&gt; xxx (your theme&#x27;s name)
+Secondly, you should chage the name of _config.landscape.yml to _config.xxx.yml.
+
+Github PagesCreate a new repository named usrname.github.iops: One Github account can only create one Github Page
+Git global config and generate SSH keyopen your cmd or git bash:
+git config --global user.name &quot;usrname&quot;git config --global user.email &quot;email&quot;ssh-keygen -t rsa -c &#x27;email&#x27;# show your SSH keycat ~/.ssh/id_rsa.pub
+
+Open your Github -&gt; Settings -&gt; SSH and GPG keys -&gt; New SSH keyinput your SSH key and save
+Open the _config.yml, modify the url and deployment:
+# urlurl: https://usrname.github.io# deploymentdeploy:  type: &#x27;git&#x27;  repo: &#x27;https://github.com/usrname/usrname.github.io.git&#x27;  branch: &#x27;master&#x27;
+
+Enter in your blog folder, open git bash, insatall deployment plugin and deploy your hexo on Github
+npm install hexo-deployer-git --save# generate your hexo contenthexo g# deploy your hexo on Githubhexo d
+
+If you meet problems of Failed to connect to github.com port 443, you can try use VPN.
+# socket 5git config --global http.proxy socks5 127.0.0.1:7890git config --global https.proxy socks5 127.0.0.1:7890# httpgit config --global http.proxy 127.0.0.1:7890git config --global https.proxy 127.0.0.1:7890# find the VPNgit config --global --get http.proxygit config --global --get https.proxy# cancle the VPNgit config --global --unset http.proxygit config --global --unset https.proxy
+
+
+Domain NameIf you have a domain name, and you wanna connect it with your Github Pages usrname.github.io. I will show a case based on Tencent cloud.
+Firstly, open cmd to get your Github Pages IP address:
+ping ip usrname.github.io
+Then, you should add two records in the CDNS:@ -&gt; A -&gt; IP addresswww -&gt; CNAME -&gt; usrname.github.io
+Open your local blog folder, enter in the public, create a document named CNAME.Attention: No File FormatAdd your domain name in CNAME, and don’t forget to re-deploy it.If it succeeds, you can see your domain name in Github Pages
+
+]]></content>
+      <categories>
+        <category>Efficiency</category>
+      </categories>
+      <tags>
+        <tag>blog-deployment</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Philosophy and Knowledge Management</title>
+    <url>/2025/03/30/Philosophy-and-Knowledge-Management/</url>
+    <content><![CDATA[This article will go deeper in the relationship between philosophy and knowledge management. In the articel “How to Build Knowledge Systems”, we said that it is a dual with 5 steps.{Dual: (Record&#x2F;Outline -&gt; Extraction&#x2F;Distillation -&gt; Conceptualization&#x2F;MFUs)} -&gt; Reconfiguration -&gt; Creative Application
+Now, I wanna take it a step further. Firstly, I will introduce Ontology.Substance and AttributeMatter and FormPotentiality and ActualityIn Aristotle’s idea, form is closer to the ‘substance’ than matter. Substance &#x3D; matter &amp; form.
+However, in Kant’s idea, the reality is dual - phenomena and noumena. We can only know ‘things-as-they-appear’ and we can not know ‘things-in-themselves’.The metaphysics should focus on “what we could know” instead of “what the being is”. This paradigm shift is from Ontology (本体论) to Epistemology (认识论). It is a kind of ‘Transcendental Philosophy’ (先验哲学).
+The third shift - from “Metaphysics” to “Philosophy of Language”, Wittgenstein.The study of philosohpy should be back to the ‘daily life’.“The limits of my language means the limits of my world. - Wittgenstein, 1922”We should not care about “being”, and instead, we should focus on “what we can express”. All questions could be divided into analytical proposition (分析命题) and synthetic proposition (综合命题). It also could be called ‘Logical Positvism’ (逻辑实证主义).
+The fourth shift, Quine, “Ontological Commitment (本体论承诺)”. A kind of ‘pragmatism’ (实用主义), it assumes that even if we could not observe things or beings, like electron, however, we commit that electron exists, which could help the description of knowledge or research. It is kind of like “hypothesis” or “presumption” in the research.
+Based on the discussion of metaphysics, I wanna point out that building a knowledge system is kind of like ‘Reductionism’ (还原论). Aiming at unstructured, empirical knowledge, we want to transform it to a kind of theory, which can guide us to handle problems. So, I wanna provide some rules when we build knowledge systems:
+
+Abstraction (or conceptualization) is significant, but we cannot divorce from reality, which will makes us fall into the antinomy (自相矛盾&#x2F;二律背反).
+While we distinguish the phenomena and noumena, we have lots of perspectives, such as hierarchy of needs theory, class contradiction, etc. Building knowledge systems is a process while we construct our own perspectives.
+We tend to assume some hypotheses by default, while we appraoch problems. We should be wary of it!
+We should pay attention to ‘Holism’ (整体论), although building knowledge systems is a  process of ‘Reductionism’. Relationship is significant.
+
+]]></content>
+      <categories>
+        <category>Philosophy</category>
+      </categories>
+      <tags>
+        <tag>metaphysics</tag>
+        <tag>ontology</tag>
+        <tag>epistemology</tag>
+        <tag>logical-positvism</tag>
+        <tag>ontological-commitment</tag>
+        <tag>pragmatism</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>How to Build Knowledge Systems</title>
+    <url>/2025/03/29/How-to-Build-Knowledge-Systems/</url>
+    <content><![CDATA[(Last updated: 2025&#x2F;03&#x2F;30 4:05)There are several methods we can use to build knowledge systems. For example, we can classify our knowledge based on theoretical hierarchy (meta&#x2F;grand&#x2F;middle-range&#x2F;applied&#x2F;empirical generalization). Also, we can build the system based on the disciplinary division. According to different purposes, we have different methods.
+However, it is too difficult for personal users to build knowledge systems, if we are exposed to multiple disciplines, diverse work experience and life experience. So, this article aims to find an approach that is suitable for me to build a knowledge system. The framework will be shown first, and then I will introduce how I create it.
+
+
+Theoretical foundationsDIKW ModelThe DIKW Model (Data, Information, Knowledge, Wisdom) is a hierarchical framework that illustrates how raw data evolves into actionable wisdom through contextualization, analysis, and ethical application. Here’s a structured breakdown:
+
+Data: Raw, unprocessed facts or symbols (e.g., numbers, text, sensor readings). The foundational layer; lacks meaning without context.
+Information:  Data organized or interpreted with context.  Answers “who, what, when, where” by adding relevance.
+Knowledge: Information synthesized to identify patterns, relationships, or principles. Enables prediction, decision-making, or problem-solving (e.g., forecasting tomorrow’s temperature).
+Wisdom: Judicious application of knowledge with ethical and experiential insight. Guides long-term, value-driven actions.
+
+Applications:
+
+Business: Transforming sales data (data) into strategic inventory plans (wisdom).
+AI&#x2F;ML: Data → information (processed datasets) → knowledge (predictive models) → wisdom (ethical AI deployment).
+Knowledge Management: Emphasizes converting raw data into actionable organizational insights.
+
+Key Characteristics:Hierarchy: Each layer builds on the prior, adding value through processing and insight.Criticisms:
+
+Boundaries between layers can be ambiguous (e.g., information vs. knowledge).
+Wisdom is abstract and context-dependent, challenging to operationalize.
+Oversimplifies nonlinear, iterative learning processes.
+
+OECD knowledge classification frameworkThe OECD knowledge classification framework, introduced in the 1996 report “The Knowledge-Based Economy”, categorizes knowledge into four distinct types: know-what, know-why, know-how, and know-who. This taxonomy emphasizes how different forms of knowledge contribute to economic and organizational development. Below is a detailed breakdown of each category, including examples, characteristics, and their roles in knowledge management:
+
+Know-What: Factual knowledge about observable phenomena, events, or data. Forms the foundational layer of knowledge, critical for decision-making based on verified facts.
+Know-Why: Knowledge of principles, laws, and scientific theories explaining natural or social phenomena. Drives innovation and problem-solving by explaining underlying mechanisms.
+Know-How: Practical skills or expertise to perform tasks effectively. Key to operational efficiency and competitive advantage, as it is harder to replicate than explicit knowledge.
+Know-Who: Knowledge of social networks, including who possesses specific expertise or resources. Enhances collaboration and accelerates problem-solving by connecting knowledge sources.
+
+PS: A structured classification of knowledge type in educational psychology
+
+Declarative Knowledge: Knowledge of facts, concepts, or information that can be explicitly stated or recalled (“knowing what”).
+Procedural Knowledge: Knowledge of how to perform tasks, procedures, or skills (“knowing how”).
+Conceptual Knowledge: Deep understanding of interconnected ideas, principles, or theories (“knowing why”).
+Metacognitive Knowledge: Awareness and regulation of one’s own thinking and learning processes (“knowing about knowing”).
+
+Criticisms: Boundaries between categories (e.g., know-how vs. know-who) can blur in practice. Real-world problems often require blended knowledge types, which rigid classifications may overlook.
+
+Framework ConstructionDual pathways of knowledge acquisitionGenerally speaking, I tend to divide the ways of acquiring knowledge into two categories - structured and unstructured. Also, we can use other dualistic concepts, like institutionalized and practical. Institutionalized channels include formal education system (school&#x2F;university), digital learning platform, etc. Practical channles cover professional experience, social observation, cross-scene experience, etc.
+In my opinion, if the process of knowledge acquistion could cover ‘DIKW’, it is structured. Otherwisw, it is unstructured. There are 2 steps to achieve the  goal of organizing the acquired knowledge.
+For structured parts, we should clarify the knowledge framework;For unstructured parts, we should transform data or “know-what” into knowledge “know-why”, with the details of “know-how”.
+
+Propose the frameworkBased on theoretical foundations and personal experience, I propose the framework of building knowledge systems. It is dual with five steps.
+UnstructuredFor the unstructured part, firstly, we should record experience objectively from a third perspective. Secondly, we should extract abstract concepts from records, such as pattern features and key variables. Thirdly, we should coupling the information moduels with academic theories. There are some tools could help the process. For example, the STAR-T method: Situation, Task, Action, Result, Thinking, Conceptualization.
+Case:Step 1. Record (STAR)Situation: In Beijing, 2015, I joined in a startup project called ‘Chenxing Talent Plan’. This program aims to provide loans for college students and recover loans based on the percentage of students’ salaries after graduation.
+Task: My job is to promote this project to target customers.
+Action: There are two options for brand promotion - online and offline. I tried three methods to make offline campus promotions. The first is to communicate with the official to get supports, like establishing a enterprise-school organization, establishing a foundation, sponsorship for campus activities. Also, I tried online methods. I communicated with students’ union and organize an online speech through WeChat community.
+Result: Obviously, the offline promotion failed in my school, because the enterprise did not provide sufficient resources. And the online speech succeeded. By the way, establishing a foundation and sponsorship for campus activities were successful in the other university, but I was just involved in and not primarily responsible for.
+Step 2. Extraction (Thinking)Why it failed? The enterprise should consider costs and benefits (short term and long term). For example, establishing a enterprise-school organization was a long term favourable plan, but it needed more funds in the short term. ‘Capital is short-sighted’, especially for the startup project.Why it succeeded? In Beijing Jiaotong University, establishing a foundation and sponsorship for campus activities were successful, because the management had a relationship with the school. And the online speech was successful because of the low cost.
+With limited resources in a startup project, we should choose low cost promotion channels at first. Appropriate content and KOL can be effective to attract the first batch of users. However, the content needs to be linked to the project.
+Step 3. Conceptualization (MFUs)Concepts: resources, costs, benefits, long term, shor term, channles, content, content carrier, customers&#x2F;users, stakeholders, decision makingRelationships: 
+Step 4. Reconfiguration
+Step 5. Creative Application
+(See details in the next section)
+
+StructuredFor the structured part, in most cases, there are knowledge systems or knowledge maps while you are studying. For example, when you read articles, authors will list their hypotheses, methods, conclusions, etc. While you take courses or read books, teachers and authors will also introduce the outline, theories, practical methods, etc.
+The problem is how you integrate this knowledge into your own system. Aiming to solve this problem, we should ‘split’ the information into smaller units. For instance, when we conduct literature review research, we will use framewroks to extract key information, such as TACI (Targets, Antecedents, Consequences, Interventions), SPIDER (Sample, Phenomenon of Interest, Design, Evaluation, Research type), etc.
+In this part, I wanna introduce a word from the business research, MVP (Minimum Viable Product). MVP is the simplest version of a product that can be released to the market with just enough core features to satisfy early customers and validate a business idea. By analogy, when we process the structured knowledge, we should find the MFU, minimum feasible unit as the foundation of your knowledge system. When referencing MFU, we should understand it by common sense or MNK, minimum necessary knowledge, which should be easy to be measured or quantified.
+Why should we use MFU? Let’s back to the case mentioned above. In terms of brand promotion, we divided it into online and offline. As for the online promotion, we chose online speech to attract customers. In this experience, online speech is the MFU. We can answer the question ‘How should we organize an online speech?’ through common sense. ‘Speech content, speaker, venue (WeChat) and audience (students).’
+How about the courses, articles, books? We extract theories and ideas from them. For example, the ‘Easterlin Paradox’ states that at a point in time happiness varies directly with income, both among and within nations, but over time the long-term growth rates of happiness and income are not significantly related. In this case, MFUs are happiness and income.
+As a matter of fact, in the academical field, we usually use CDI (Concept-Dimension-Index) to make research designs. But in different cases, MFUs could be concepts or indexes. The boundary is blur in practice. When we link different concepts (or MFUs) together, theories are formed. It could be linear or non-linear relationship, could be hierarchy, could be framework, could be workflow, etc. Now, I wanna propose steps to process structured knowledge.
+Step 1. OutlineOutline the knowledge from authors’ perspectives.
+Step 2. DistillationIdentify useful theories and ideas from the outline, including relationship between concepts, framework, models, etc.
+Step 3. MFUsFind MFUs of these theories and ideas, and make tags on them.
+Step 4. ReconfigurationCombine MFUs with distillation and extraction parts, to understand the relationship, hierarchy, framework, etc. Transform empirical knowledge and others’ knowledge into your own’s.
+Step 5. Creative ApplicationTry to apply your knowledge in the real world!
+]]></content>
+      <categories>
+        <category>Knowledge Management</category>
+      </categories>
+      <tags>
+        <tag>knowledge-management</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Consumer and Management</title>
+    <url>/2025/03/27/Consumer-and-Management/</url>
+    <content><![CDATA[
+]]></content>
+      <categories>
+        <category>Self-constructed models</category>
+      </categories>
+      <tags>
+        <tag>consumer</tag>
+        <tag>management</tag>
+        <tag>segmentation</tag>
+        <tag>conflict-of-interest</tag>
+      </tags>
+  </entry>
+</search>
