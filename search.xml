@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Delagation Theory</title>
-    <url>/2025/03/14/Delagation-Theory/</url>
-    <content><![CDATA[Baird, Aaron, and Likoebe M. Maruping. “The Next Generation of Research on IS Use: A Theoretical Framework of Delegation to and from Agentic IS Artifacts.” MIS Quarterly 45, no. 1 (March 1, 2021): 315–41. https://doi.org/10.25300/MISQ/2021/15882.
-Presumption: the theoretical paradigm shift in the &#x3D;&#x3D;IS use&#x3D;&#x3D; research - from “treating the IS artifact as a passive tool” to “agentic IS artifacts“.
-Gap: The vast majority of IS use research, however, assumes that IS artifacts are tools that serve as a means to achieving a user’s ends.
-Core: 
-
-transferring rights and responsibilities for task execution and outcomes.
-This new generation of agentic IS artifacts is imbued with the capacity to learn, adapt, act autonomously, and be aware of the need to act without being prompted by users.
-
+    <title>Consumer and Management</title>
+    <url>/2025/03/27/Consumer-and-Management/</url>
+    <content><![CDATA[
 ]]></content>
       <categories>
-        <category>MIS theories</category>
+        <category>Self-constructed models</category>
       </categories>
       <tags>
-        <tag>agent</tag>
-        <tag>IS-use</tag>
-        <tag>paradigm</tag>
+        <tag>consumer</tag>
+        <tag>management</tag>
+        <tag>segmentation</tag>
+        <tag>conflict-of-interest</tag>
       </tags>
   </entry>
   <entry>
@@ -32,70 +26,6 @@ This new generation of agentic IS artifacts is imbued with the capacity to learn
       <tags>
         <tag>brand</tag>
         <tag>strategy</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>My 2015</title>
-    <url>/2015/03/31/My-2015/</url>
-    <content><![CDATA[我是一个典型的“中国式家长”抚养长大的孩子，小时候就开始“享受”所谓的“培优” - 书法，绘画，奥数，作文，英语。到了初中，项目就变成了语数外理化生。高二的时候选择了文科，政史地替代了理化生。在应试教育上，我算是“优胜者”。或许是受压迫太久了，在高考志愿中，除了华科，北外也上了志愿名单。2012年的秋天，我“如愿以偿”地去到了北京，一个崭新的地方。
-然而，大学第一年，我就厌学了。毅然决然地选择休学一年，但是为了有地方住而不用回到所谓的“家”，办理的是留级的手续。有意思的是，我的课程都踩着及格线通过了，不需要再考一遍。所以那一年，逐渐开始放飞自我。13-14年，我在图书馆里看着各式各样的书籍，从比较文学到诗词格律，从社会学到商业财务。
-14年的暑假，我被安排去一家绥芬河的俄罗斯酒店当服务员，美其名曰锻炼口语。那段日子，枯燥的生活让我十分挣扎。一周6天，每天9小时的工作，一个月1500的工资。对比我在北京当家教时，周末工作，100的时薪。在那一座中俄边境的小县城，我告诉自己，我要走得更远。回北京后，我开始准备ACCA的考试，并报名了相关的课程。也是在这一年秋天，我遇到了她。
-一路成长的经历让我只想远离自己的过去，组建自己的家庭。我太认真了，也太较真了。次年的春天，我们分开了。这场断崖式的分手，让我陷入了抑郁的沼泽。作息完全颠倒，不敢白天出门。暑期的时候，找到老师给我安排了出国交换的项目。目的地，符拉迪沃斯托克。
-]]></content>
-      <categories>
-        <category>Memory</category>
-      </categories>
-      <tags>
-        <tag>My-past</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Blog Deployment: Hexo Github-Pages</title>
-    <url>/2025/03/27/Deployment-Hexo-Github-Pages/</url>
-    <content><![CDATA[This article aims to introduce a method to deploy the personal blog based on Hexo, Github and Obisidian.
-
-Environment
-OS: windows
-Tools: Node.js, VS Code, git
-
-
-HexoDownload and install Node.js https://nodejs.org/enDownload and install git https://git-scm.com/downloads/winOpen the powershell or cmd and install Hexo, excute:
-npm install -g hexo-cli
-To initialize hexo:Create new folder named ‘xx-blog’ (whatever u like)Enter your blog folder, input cmd in the navigation barAlso, you can choose right click to Open Git Bash here and excute:
-hexo init
-If you meet the problem with network, like error: RPC failed; curl 28 OpenSSL SSL_read: Connection was reset, you can try to excute:
-git config --global http.sslVerify &quot;false&quot;
-After the initialization, you can try to choose a preferable theme from the official websitehttps://hexo.io/themes/Download the theme and put the decompressed content into the folder themes.There are two places to be modified to make your theme working.Firstly, you should change the theme name in _config.yml:
-theme: landscape -&gt; xxx (your theme&#x27;s name)
-Secondly, you should chage the name of _config.landscape.yml to _config.xxx.yml.
-
-Github PagesCreate a new repository named usrname.github.iops: One Github account can only create one Github Page
-Git global config and generate SSH keyopen your cmd or git bash:
-git config --global user.name &quot;usrname&quot;git config --global user.email &quot;email&quot;ssh-keygen -t rsa -c &#x27;email&#x27;# show your SSH keycat ~/.ssh/id_rsa.pub
-
-Open your Github -&gt; Settings -&gt; SSH and GPG keys -&gt; New SSH keyinput your SSH key and save
-Open the _config.yml, modify the url and deployment:
-# urlurl: https://usrname.github.io# deploymentdeploy:  type: &#x27;git&#x27;  repo: &#x27;https://github.com/usrname/usrname.github.io.git&#x27;  branch: &#x27;master&#x27;
-
-Enter in your blog folder, open git bash, insatall deployment plugin and deploy your hexo on Github
-npm install hexo-deployer-git --save# generate your hexo contenthexo g# deploy your hexo on Githubhexo d
-
-If you meet problems of Failed to connect to github.com port 443, you can try use VPN.
-# socket 5git config --global http.proxy socks5 127.0.0.1:7890git config --global https.proxy socks5 127.0.0.1:7890# httpgit config --global http.proxy 127.0.0.1:7890git config --global https.proxy 127.0.0.1:7890# find the VPNgit config --global --get http.proxygit config --global --get https.proxy# cancle the VPNgit config --global --unset http.proxygit config --global --unset https.proxy
-
-
-Domain NameIf you have a domain name, and you wanna connect it with your Github Pages usrname.github.io. I will show a case based on Tencent cloud.
-Firstly, open cmd to get your Github Pages IP address:
-ping ip usrname.github.io
-Then, you should add two records in the CDNS:@ -&gt; A -&gt; IP addresswww -&gt; CNAME -&gt; usrname.github.io
-Open your local blog folder, enter in the public, create a document named CNAME.Attention: No File FormatAdd your domain name in CNAME, and don’t forget to re-deploy it.If it succeeds, you can see your domain name in Github Pages
-
-]]></content>
-      <categories>
-        <category>Efficiency</category>
-      </categories>
-      <tags>
-        <tag>blog-deployment</tag>
       </tags>
   </entry>
   <entry>
@@ -205,18 +135,105 @@ Step 5. Creative ApplicationTry to apply your knowledge in the real world!
       </tags>
   </entry>
   <entry>
-    <title>Consumer and Management</title>
-    <url>/2025/03/27/Consumer-and-Management/</url>
-    <content><![CDATA[
+    <title>Custom Configuration Hexo-butterfly</title>
+    <url>/2025/04/01/Custom-Configuration-Hexo-butterfly/</url>
+    <content><![CDATA[If you wanna change the theme color, open the _config.yml of butterfly, find codes:
+# Theme color for customize# Notice: color value must in double quotes like &quot;#000&quot; or may cause error!theme_color:  enable: true
+
 ]]></content>
       <categories>
-        <category>Self-constructed models</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>consumer</tag>
-        <tag>management</tag>
-        <tag>segmentation</tag>
-        <tag>conflict-of-interest</tag>
+        <tag>hexo</tag>
+        <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Blog Deployment: Hexo Github-Pages</title>
+    <url>/2025/03/27/Deployment-Hexo-Github-Pages/</url>
+    <content><![CDATA[This article aims to introduce a method to deploy the personal blog based on Hexo, Github and Obisidian.
+
+Environment
+OS: windows
+Tools: Node.js, VS Code, git
+
+
+HexoDownload and install Node.js https://nodejs.org/enDownload and install git https://git-scm.com/downloads/winOpen the powershell or cmd and install Hexo, excute:
+npm install -g hexo-cli
+To initialize hexo:Create new folder named ‘xx-blog’ (whatever u like)Enter your blog folder, input cmd in the navigation barAlso, you can choose right click to Open Git Bash here and excute:
+hexo init
+If you meet the problem with network, like error: RPC failed; curl 28 OpenSSL SSL_read: Connection was reset, you can try to excute:
+git config --global http.sslVerify &quot;false&quot;
+After the initialization, you can try to choose a preferable theme from the official websitehttps://hexo.io/themes/Download the theme and put the decompressed content into the folder themes.There are two places to be modified to make your theme working.Firstly, you should change the theme name in _config.yml:
+theme: landscape -&gt; xxx (your theme&#x27;s name)
+Secondly, you should chage the name of _config.landscape.yml to _config.xxx.yml.
+
+Github PagesCreate a new repository named usrname.github.iops: One Github account can only create one Github Page
+Git global config and generate SSH keyopen your cmd or git bash:
+git config --global user.name &quot;usrname&quot;git config --global user.email &quot;email&quot;ssh-keygen -t rsa -c &#x27;email&#x27;# show your SSH keycat ~/.ssh/id_rsa.pub
+
+Open your Github -&gt; Settings -&gt; SSH and GPG keys -&gt; New SSH keyinput your SSH key and save
+Open the _config.yml, modify the url and deployment:
+# urlurl: https://usrname.github.io# deploymentdeploy:  type: &#x27;git&#x27;  repo: &#x27;https://github.com/usrname/usrname.github.io.git&#x27;  branch: &#x27;master&#x27;
+
+Enter in your blog folder, open git bash, insatall deployment plugin and deploy your hexo on Github
+npm install hexo-deployer-git --save# generate your hexo contenthexo g# deploy your hexo on Githubhexo d
+
+If you meet problems of Failed to connect to github.com port 443, you can try use VPN.
+# socket 5git config --global http.proxy socks5 127.0.0.1:7890git config --global https.proxy socks5 127.0.0.1:7890# httpgit config --global http.proxy 127.0.0.1:7890git config --global https.proxy 127.0.0.1:7890# find the VPNgit config --global --get http.proxygit config --global --get https.proxy# cancle the VPNgit config --global --unset http.proxygit config --global --unset https.proxy
+
+
+Domain NameIf you have a domain name, and you wanna connect it with your Github Pages usrname.github.io. I will show a case based on Tencent cloud.
+Firstly, open cmd to get your Github Pages IP address:
+ping ip usrname.github.io
+Then, you should add two records in the CDNS:@ -&gt; A -&gt; IP addresswww -&gt; CNAME -&gt; usrname.github.io
+Open your local blog folder, enter in the public, create a document named CNAME.Attention: No File FormatAdd your domain name in CNAME, and don’t forget to re-deploy it.If it succeeds, you can see your domain name in Github Pages
+
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>butterfly</tag>
+        <tag>blog-deployment</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Delagation Theory</title>
+    <url>/2025/03/14/Delagation-Theory/</url>
+    <content><![CDATA[Baird, Aaron, and Likoebe M. Maruping. “The Next Generation of Research on IS Use: A Theoretical Framework of Delegation to and from Agentic IS Artifacts.” MIS Quarterly 45, no. 1 (March 1, 2021): 315–41. https://doi.org/10.25300/MISQ/2021/15882.
+Presumption: the theoretical paradigm shift in the &#x3D;&#x3D;IS use&#x3D;&#x3D; research - from “treating the IS artifact as a passive tool” to “agentic IS artifacts“.
+Gap: The vast majority of IS use research, however, assumes that IS artifacts are tools that serve as a means to achieving a user’s ends.
+Core: 
+
+transferring rights and responsibilities for task execution and outcomes.
+This new generation of agentic IS artifacts is imbued with the capacity to learn, adapt, act autonomously, and be aware of the need to act without being prompted by users.
+
+]]></content>
+      <categories>
+        <category>MIS theories</category>
+      </categories>
+      <tags>
+        <tag>agent</tag>
+        <tag>IS-use</tag>
+        <tag>paradigm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>My 2015</title>
+    <url>/2015/03/31/My-2015/</url>
+    <content><![CDATA[我是一个典型的“中国式家长”抚养长大的孩子，小时候就开始“享受”所谓的“培优” - 书法，绘画，奥数，作文，英语。到了初中，项目就变成了语数外理化生。高二的时候选择了文科，政史地替代了理化生。在应试教育上，我算是“优胜者”。或许是受压迫太久了，在高考志愿中，除了华科，北外也上了志愿名单。2012年的秋天，我“如愿以偿”地去到了北京，一个崭新的地方。
+然而，大学第一年，我就厌学了。毅然决然地选择休学一年，但是为了有地方住而不用回到所谓的“家”，办理的是留级的手续。有意思的是，我的课程都踩着及格线通过了，不需要再考一遍。所以那一年，逐渐开始放飞自我。13-14年，我在图书馆里看着各式各样的书籍，从比较文学到诗词格律，从社会学到商业财务。
+14年的暑假，我被安排去一家绥芬河的俄罗斯酒店当服务员，美其名曰锻炼口语。那段日子，枯燥的生活让我十分挣扎。一周6天，每天9小时的工作，一个月1500的工资。对比我在北京当家教时，周末工作，100的时薪。在那一座中俄边境的小县城，我告诉自己，我要走得更远。回北京后，我开始准备ACCA的考试，并报名了相关的课程。也是在这一年秋天，我遇到了她。
+一路成长的经历让我只想远离自己的过去，组建自己的家庭。我太认真了，也太较真了。次年的春天，我们分开了。这场断崖式的分手，让我陷入了抑郁的沼泽。作息完全颠倒，不敢白天出门。暑期的时候，找到老师给我安排了出国交换的项目。目的地，符拉迪沃斯托克。
+]]></content>
+      <categories>
+        <category>Memory</category>
+      </categories>
+      <tags>
+        <tag>My-past</tag>
       </tags>
   </entry>
 </search>
