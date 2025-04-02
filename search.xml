@@ -1,64 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Consumer and Management</title>
-    <url>/2025/03/27/Consumer-and-Management/</url>
-    <content><![CDATA[
+    <title>4月2日</title>
+    <url>/2025/04/02/Diary/4%E6%9C%882%E6%97%A5/</url>
+    <content><![CDATA[今天给个人网站增添了一些新的功能：
+
+搜索功能
+加密功能
+背景动效
+
+ 在权衡一番后，在自建nas or 成品nas之间，选择买了一个4T的硬盘。——不要扩张自己的需求
+在体验过了GitHub+vercel&#x2F;cloudfare的方案后，选择了PicGo+七牛云的图床方案，国内来说后者更加适合。
+将桌面笔记全部整合到了hexo+obsidian，未来几天将陆续把以前的笔记纳入进来。
 ]]></content>
       <categories>
-        <category>Self-constructed models</category>
+        <category>Diary</category>
       </categories>
       <tags>
-        <tag>consumer</tag>
-        <tag>management</tag>
-        <tag>segmentation</tag>
-        <tag>conflict-of-interest</tag>
+        <tag>diary</tag>
       </tags>
   </entry>
   <entry>
-    <title>Brand Positioning</title>
-    <url>/2025/03/27/Brand-Positioning/</url>
-    <content><![CDATA[
+    <title>Blog Deployment: Hexo Github-Pages</title>
+    <url>/2025/03/27/Hexo/Deployment-Hexo-Github-Pages/</url>
+    <content><![CDATA[This article aims to introduce a method to deploy the personal blog based on Hexo, Github and Obisidian.
+
+Environment
+OS: windows
+Tools: Node.js, VS Code, git
+
+
+HexoDownload and install Node.js https://nodejs.org/enDownload and install git https://git-scm.com/downloads/winOpen the powershell or cmd and install Hexo, excute:
+npm install -g hexo-cli
+To initialize hexo:Create new folder named ‘xx-blog’ (whatever u like)Enter your blog folder, input cmd in the navigation barAlso, you can choose right click to Open Git Bash here and excute:
+hexo init
+If you meet the problem with network, like error: RPC failed; curl 28 OpenSSL SSL_read: Connection was reset, you can try to excute:
+git config --global http.sslVerify &quot;false&quot;
+After the initialization, you can try to choose a preferable theme from the official websitehttps://hexo.io/themes/Download the theme and put the decompressed content into the folder themes.There are two places to be modified to make your theme working.Firstly, you should change the theme name in _config.yml:
+theme: landscape -&gt; xxx (your theme&#x27;s name)
+Secondly, you should chage the name of _config.landscape.yml to _config.xxx.yml.
+
+Github PagesCreate a new repository named usrname.github.iops: One Github account can only create one Github Page
+Git global config and generate SSH keyopen your cmd or git bash:
+git config --global user.name &quot;usrname&quot;git config --global user.email &quot;email&quot;ssh-keygen -t rsa -c &#x27;email&#x27;# show your SSH keycat ~/.ssh/id_rsa.pub
+
+Open your Github -&gt; Settings -&gt; SSH and GPG keys -&gt; New SSH keyinput your SSH key and save
+Open the _config.yml, modify the url and deployment:
+# urlurl: https://usrname.github.io# deploymentdeploy:  type: &#x27;git&#x27;  repo: &#x27;https://github.com/usrname/usrname.github.io.git&#x27;  branch: &#x27;master&#x27;
+
+Enter in your blog folder, open git bash, insatall deployment plugin and deploy your hexo on Github
+npm install hexo-deployer-git --save# generate your hexo contenthexo g# deploy your hexo on Githubhexo d
+
+If you meet problems of Failed to connect to github.com port 443, you can try use VPN.
+# socket 5git config --global http.proxy socks5 127.0.0.1:7890git config --global https.proxy socks5 127.0.0.1:7890# httpgit config --global http.proxy 127.0.0.1:7890git config --global https.proxy 127.0.0.1:7890# find the VPNgit config --global --get http.proxygit config --global --get https.proxy# cancle the VPNgit config --global --unset http.proxygit config --global --unset https.proxy
+
+
+Domain NameIf you have a domain name, and you wanna connect it with your Github Pages usrname.github.io. I will show a case based on Tencent cloud.
+Firstly, open cmd to get your Github Pages IP address:
+ping ip usrname.github.io
+Then, you should add two records in the CDNS:@ -&gt; A -&gt; IP addresswww -&gt; CNAME -&gt; usrname.github.io
+Open your local blog folder, enter in the public, create a document named CNAME.Attention: No File FormatAdd your domain name in CNAME, and don’t forget to re-deploy it.If it succeeds, you can see your domain name in Github Pages
+
 ]]></content>
       <categories>
-        <category>Self-constructed models</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>brand</tag>
-        <tag>strategy</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Philosophy and Knowledge Management</title>
-    <url>/2025/03/30/Philosophy-and-Knowledge-Management/</url>
-    <content><![CDATA[This article will go deeper in the relationship between philosophy and knowledge management. In the articel “How to Build Knowledge Systems”, we said that it is a dual with 5 steps.{Dual: (Record&#x2F;Outline -&gt; Extraction&#x2F;Distillation -&gt; Conceptualization&#x2F;MFUs)} -&gt; Reconfiguration -&gt; Creative Application
-Now, I wanna take it a step further. Firstly, I will introduce Ontology.Substance and AttributeMatter and FormPotentiality and ActualityIn Aristotle’s idea, form is closer to the ‘substance’ than matter. Substance &#x3D; matter &amp; form.
-However, in Kant’s idea, the reality is dual - phenomena and noumena. We can only know ‘things-as-they-appear’ and we can not know ‘things-in-themselves’.The metaphysics should focus on “what we could know” instead of “what the being is”. This paradigm shift is from Ontology (本体论) to Epistemology (认识论). It is a kind of ‘Transcendental Philosophy’ (先验哲学).
-The third shift - from “Metaphysics” to “Philosophy of Language”, Wittgenstein.The study of philosohpy should be back to the ‘daily life’.“The limits of my language means the limits of my world. - Wittgenstein, 1922”We should not care about “being”, and instead, we should focus on “what we can express”. All questions could be divided into analytical proposition (分析命题) and synthetic proposition (综合命题). It also could be called ‘Logical Positvism’ (逻辑实证主义).
-The fourth shift, Quine, “Ontological Commitment (本体论承诺)”. A kind of ‘pragmatism’ (实用主义), it assumes that even if we could not observe things or beings, like electron, however, we commit that electron exists, which could help the description of knowledge or research. It is kind of like “hypothesis” or “presumption” in the research.
-Based on the discussion of metaphysics, I wanna point out that building a knowledge system is kind of like ‘Reductionism’ (还原论). Aiming at unstructured, empirical knowledge, we want to transform it to a kind of theory, which can guide us to handle problems. So, I wanna provide some rules when we build knowledge systems:
-
-Abstraction (or conceptualization) is significant, but we cannot divorce from reality, which will makes us fall into the antinomy (自相矛盾&#x2F;二律背反).
-While we distinguish the phenomena and noumena, we have lots of perspectives, such as hierarchy of needs theory, class contradiction, etc. Building knowledge systems is a process while we construct our own perspectives.
-We tend to assume some hypotheses by default, while we appraoch problems. We should be wary of it!
-We should pay attention to ‘Holism’ (整体论), although building knowledge systems is a  process of ‘Reductionism’. Relationship is significant.
-
-]]></content>
-      <categories>
-        <category>Philosophy</category>
-      </categories>
-      <tags>
-        <tag>metaphysics</tag>
-        <tag>ontology</tag>
-        <tag>epistemology</tag>
-        <tag>logical-positvism</tag>
-        <tag>ontological-commitment</tag>
-        <tag>pragmatism</tag>
+        <tag>blog-deployment</tag>
+        <tag>hexo</tag>
+        <tag>butterfly</tag>
       </tags>
   </entry>
   <entry>
     <title>How to Build Knowledge Systems</title>
-    <url>/2025/03/29/How-to-Build-Knowledge-Systems/</url>
+    <url>/2025/03/29/Knowledge%20Management/How-to-Build-Knowledge-Systems/</url>
     <content><![CDATA[(Last updated: 2025&#x2F;03&#x2F;30 4:05)There are several methods we can use to build knowledge systems. For example, we can classify our knowledge based on theoretical hierarchy (meta&#x2F;grand&#x2F;middle-range&#x2F;applied&#x2F;empirical generalization). Also, we can build the system based on the disciplinary division. According to different purposes, we have different methods.
 However, it is too difficult for personal users to build knowledge systems, if we are exposed to multiple disciplines, diverse work experience and life experience. So, this article aims to find an approach that is suitable for me to build a knowledge system. The framework will be shown first, and then I will introduce how I create it.
 
@@ -135,12 +150,95 @@ Step 5. Creative ApplicationTry to apply your knowledge in the real world!
       </tags>
   </entry>
   <entry>
-    <title>Custom Configuration Hexo-butterfly</title>
-    <url>/2025/04/01/Custom-Configuration-Hexo-butterfly/</url>
-    <content><![CDATA[If you wanna change the theme color, open the _config.yml of butterfly, find codes:
-# Theme color for customize# Notice: color value must in double quotes like &quot;#000&quot; or may cause error!theme_color:  enable: true
+    <title>Philosophy and Knowledge Management</title>
+    <url>/2025/03/30/Knowledge%20Management/Philosophy-and-Knowledge-Management/</url>
+    <content><![CDATA[This article will go deeper in the relationship between philosophy and knowledge management. In the articel “How to Build Knowledge Systems”, we said that it is a dual with 5 steps.{Dual: (Record&#x2F;Outline -&gt; Extraction&#x2F;Distillation -&gt; Conceptualization&#x2F;MFUs)} -&gt; Reconfiguration -&gt; Creative Application
+Now, I wanna take it a step further. Firstly, I will introduce Ontology.Substance and AttributeMatter and FormPotentiality and ActualityIn Aristotle’s idea, form is closer to the ‘substance’ than matter. Substance &#x3D; matter &amp; form.
+However, in Kant’s idea, the reality is dual - phenomena and noumena. We can only know ‘things-as-they-appear’ and we can not know ‘things-in-themselves’.The metaphysics should focus on “what we could know” instead of “what the being is”. This paradigm shift is from Ontology (本体论) to Epistemology (认识论). It is a kind of ‘Transcendental Philosophy’ (先验哲学).
+The third shift - from “Metaphysics” to “Philosophy of Language”, Wittgenstein.The study of philosohpy should be back to the ‘daily life’.“The limits of my language means the limits of my world. - Wittgenstein, 1922”We should not care about “being”, and instead, we should focus on “what we can express”. All questions could be divided into analytical proposition (分析命题) and synthetic proposition (综合命题). It also could be called ‘Logical Positvism’ (逻辑实证主义).
+The fourth shift, Quine, “Ontological Commitment (本体论承诺)”. A kind of ‘pragmatism’ (实用主义), it assumes that even if we could not observe things or beings, like electron, however, we commit that electron exists, which could help the description of knowledge or research. It is kind of like “hypothesis” or “presumption” in the research.
+Based on the discussion of metaphysics, I wanna point out that building a knowledge system is kind of like ‘Reductionism’ (还原论). Aiming at unstructured, empirical knowledge, we want to transform it to a kind of theory, which can guide us to handle problems. So, I wanna provide some rules when we build knowledge systems:
+
+Abstraction (or conceptualization) is significant, but we cannot divorce from reality, which will makes us fall into the antinomy (自相矛盾&#x2F;二律背反).
+While we distinguish the phenomena and noumena, we have lots of perspectives, such as hierarchy of needs theory, class contradiction, etc. Building knowledge systems is a process while we construct our own perspectives.
+We tend to assume some hypotheses by default, while we appraoch problems. We should be wary of it!
+We should pay attention to ‘Holism’ (整体论), although building knowledge systems is a  process of ‘Reductionism’. Relationship is significant.
 
 ]]></content>
+      <categories>
+        <category>Knowledge Management</category>
+      </categories>
+      <tags>
+        <tag>metaphysics</tag>
+        <tag>ontology</tag>
+        <tag>epistemology</tag>
+        <tag>logical-positvism</tag>
+        <tag>ontological-commitment</tag>
+        <tag>pragmatism</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Custom Configuration Hexo-butterfly</title>
+    <url>/2025/04/01/Hexo/Custom-Configuration-Hexo-butterfly/</url>
+    <content><![CDATA[Gallery
+Github New Repository
+Connect your PC with Github (details can be seen in the article “Deployment Hexo Github Pages”)
+Create a new folder, and open Git Bash
+
+git clone git@github.com:Jasper1910/pic_bed.git# your github SSH
+
+Create folders and add your pictures, and then, open Git Bash in the path with README
+
+git add.git commit -m &quot;更新图片&quot;git push
+
+Also, PicGo is a popular tool to manage pictures.
+
+Add auto categories
+install hexo plugins
+add codes in _config.yml
+
+npm install hexo-auto-category --save# Generate categories from directory-tree# Dependencies: https://github.com/xu-song/hexo-auto-category# depth: the depth of directory-tree you want to generate, should &gt; 0auto_category:	enable: true	depth:
+
+
+Theme colorIf you wanna change the theme color, open the _config.yml of butterfly, find codes:
+# Theme color for customize# Notice: color value must in double quotes like &quot;#000&quot; or may cause error!theme_color:  enable: true
+
+
+Search
+Install search plugin:
+
+npm install hexo-auto-category --save
+
+Add codes in _config.yml:
+
+# field, is the range of search, post/page/allsearch:    	path: search.xml    	field: post    	content: true
+
+Modify codes in _config.butterfly.yml
+
+search:	# Choose: algolia_search / local_search / docsearch	# leave it empty if you don&#x27;t need search	use: local_search	placeholder:local_search:	enable: true 
+
+
+Subtitle# The subtitle on homepagesubtitle:  enable: true  # Typewriter Effect  effect: true  # Customize typed.js  # https://github.com/mattboldt/typed.js/#customization  typed_option:  # Source - Call the third-party service API (Chinese only)  # It will show the source first, then show the content of sub  # Choose: false/1/2/3  # false - disable the function  # 1 - hitokoto.cn  # 2 - https://api.aa1.cn/doc/yiyan.html  # 3 - jinrishici.com  source: false  # If you close the typewriter effect, the subtitle will only show the first line of sub  sub:    - &#x27;A blog about programming, technology, and life.&#x27;
+
+
+Background effectscanvas_fluttering_ribbon:  	enable: true  	mobile: false # usage in the mobile devicecanvas_nest:  	enable: true  	color: &#x27;0,0,255&#x27; #color of lines, default: &#x27;0,0,0&#x27;; RGB values: (R,G,B).(note: use &#x27;,&#x27; to separate.)  	opacity: 0.7 # the opacity of line (0~1), default: 0.5.  	zIndex: -1 # z-index property of the background, default: -1.  	count: 99 # the number of lines, default: 99.  	mobile: false
+
+
+Encrypt
+Download plugin
+
+npm install --save hexo-blog-encrypt
+
+Add codes in _config.yml
+
+encrypt:	abstract: please enter the password to view this post	message: this post is encrypted, please enter the password to view it	tags:	- &#123;name: ontology, password: 123456&#125;	wrong_pass_message: wrong password, please try again
+
+Add password or the encrypted type in your article
+
+---  title: Hello World  date: tags:	- the encrypted tagpassword: ---
+see more details in URL: https://github.com/D0n9X1n/hexo-blog-encrypt?tab=readme-ov-file
+
+Modify the post configuration]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
@@ -150,59 +248,56 @@ Step 5. Creative ApplicationTry to apply your knowledge in the real world!
       </tags>
   </entry>
   <entry>
-    <title>Blog Deployment: Hexo Github-Pages</title>
-    <url>/2025/03/27/Deployment-Hexo-Github-Pages/</url>
-    <content><![CDATA[This article aims to introduce a method to deploy the personal blog based on Hexo, Github and Obisidian.
-
-Environment
-OS: windows
-Tools: Node.js, VS Code, git
-
-
-HexoDownload and install Node.js https://nodejs.org/enDownload and install git https://git-scm.com/downloads/winOpen the powershell or cmd and install Hexo, excute:
-npm install -g hexo-cli
-To initialize hexo:Create new folder named ‘xx-blog’ (whatever u like)Enter your blog folder, input cmd in the navigation barAlso, you can choose right click to Open Git Bash here and excute:
-hexo init
-If you meet the problem with network, like error: RPC failed; curl 28 OpenSSL SSL_read: Connection was reset, you can try to excute:
-git config --global http.sslVerify &quot;false&quot;
-After the initialization, you can try to choose a preferable theme from the official websitehttps://hexo.io/themes/Download the theme and put the decompressed content into the folder themes.There are two places to be modified to make your theme working.Firstly, you should change the theme name in _config.yml:
-theme: landscape -&gt; xxx (your theme&#x27;s name)
-Secondly, you should chage the name of _config.landscape.yml to _config.xxx.yml.
-
-Github PagesCreate a new repository named usrname.github.iops: One Github account can only create one Github Page
-Git global config and generate SSH keyopen your cmd or git bash:
-git config --global user.name &quot;usrname&quot;git config --global user.email &quot;email&quot;ssh-keygen -t rsa -c &#x27;email&#x27;# show your SSH keycat ~/.ssh/id_rsa.pub
-
-Open your Github -&gt; Settings -&gt; SSH and GPG keys -&gt; New SSH keyinput your SSH key and save
-Open the _config.yml, modify the url and deployment:
-# urlurl: https://usrname.github.io# deploymentdeploy:  type: &#x27;git&#x27;  repo: &#x27;https://github.com/usrname/usrname.github.io.git&#x27;  branch: &#x27;master&#x27;
-
-Enter in your blog folder, open git bash, insatall deployment plugin and deploy your hexo on Github
-npm install hexo-deployer-git --save# generate your hexo contenthexo g# deploy your hexo on Githubhexo d
-
-If you meet problems of Failed to connect to github.com port 443, you can try use VPN.
-# socket 5git config --global http.proxy socks5 127.0.0.1:7890git config --global https.proxy socks5 127.0.0.1:7890# httpgit config --global http.proxy 127.0.0.1:7890git config --global https.proxy 127.0.0.1:7890# find the VPNgit config --global --get http.proxygit config --global --get https.proxy# cancle the VPNgit config --global --unset http.proxygit config --global --unset https.proxy
-
-
-Domain NameIf you have a domain name, and you wanna connect it with your Github Pages usrname.github.io. I will show a case based on Tencent cloud.
-Firstly, open cmd to get your Github Pages IP address:
-ping ip usrname.github.io
-Then, you should add two records in the CDNS:@ -&gt; A -&gt; IP addresswww -&gt; CNAME -&gt; usrname.github.io
-Open your local blog folder, enter in the public, create a document named CNAME.Attention: No File FormatAdd your domain name in CNAME, and don’t forget to re-deploy it.If it succeeds, you can see your domain name in Github Pages
-
+    <title>4月1日</title>
+    <url>/2025/04/01/Diary/4%E6%9C%881%E6%97%A5/</url>
+    <content><![CDATA[凌晨：学习：hexo 部署相册和时间轴，github + vercel&#x2F;cloudfare部署图床新闻：德国修宪，债务扩张，原债务管控-不超过GDP0.35%整理15-24年照片，发现长焦拍出来的照片丢失了环境元素。当时觉得不错的照片，10年后再看，已然忘了当时拍摄的背景和动机。之后要多尝试35mm焦段的拍摄。登高望远和演唱会等情景下，长焦还是非常好的。短视频碎片知识：米芾评价唐楷过于方正，书法应当随心而动，随意行笔。但是米芾之所以能做到宋代书法巅峰，实则离不开其早期多年的唐楷功底。十分有趣~
+上午：研究数据存储方案：NAS &amp; PCIE拓展卡（通道拆分）目前更倾向于组件一个媒体备用机，使用PCIE拓展卡的方案。自购的CPU主板等可以当作电脑的备用机，而传统NAS更倾向于N100的低功耗芯片。且由于 amd7000系列+b650主板的方案，目前消费级市场的拓展方案也还不错。一般来说主板双硬盘位+拓展卡4硬盘位，可以实现6盘位的SSD存储。
+下午：和老刘去时代广场划水，非常不错的 city walk 线路。
+附几张比较喜欢的照片（见gallery“2025-4-1”）
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>Diary</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
-        <tag>butterfly</tag>
-        <tag>blog-deployment</tag>
+        <tag>diary</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>anaconda commands常用指令</title>
+    <url>/2025/04/02/Programming/anaconda%20commands%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[查看anaconda配置信息：conda info
+查看虚拟环境列表：conda env list
+anaconda换源：conda config –add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda config –add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/conda config –set show_channel_urls yes
+更改anaconda虚拟环境默认安装位置：conda config –add envs_dirs D:\software\anaconda\envs
+新建虚拟环境：conda create -n yourname python&#x3D;3.7
+启用虚拟环境conda activate yourname
+删除虚拟环境conda remove -n yourname –all
+指定源安装pip install opencv-python -i https://pypi.tuna.tsinghua.edu.cn/simple
+]]></content>
+      <categories>
+        <category>Programming</category>
+      </categories>
+      <tags>
+        <tag>commands</tag>
+        <tag>anaconda</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Brand Positioning</title>
+    <url>/2025/03/27/Self-constructed%20Models/Brand-Positioning/</url>
+    <content><![CDATA[
+]]></content>
+      <categories>
+        <category>Self-constructed Models</category>
+      </categories>
+      <tags>
+        <tag>brand</tag>
+        <tag>strategy</tag>
       </tags>
   </entry>
   <entry>
     <title>Delagation Theory</title>
-    <url>/2025/03/14/Delagation-Theory/</url>
+    <url>/2025/03/14/MIS%20theories/Delagation-Theory/</url>
     <content><![CDATA[Baird, Aaron, and Likoebe M. Maruping. “The Next Generation of Research on IS Use: A Theoretical Framework of Delegation to and from Agentic IS Artifacts.” MIS Quarterly 45, no. 1 (March 1, 2021): 315–41. https://doi.org/10.25300/MISQ/2021/15882.
 Presumption: the theoretical paradigm shift in the &#x3D;&#x3D;IS use&#x3D;&#x3D; research - from “treating the IS artifact as a passive tool” to “agentic IS artifacts“.
 Gap: The vast majority of IS use research, however, assumes that IS artifacts are tools that serve as a means to achieving a user’s ends.
@@ -223,17 +318,582 @@ This new generation of agentic IS artifacts is imbued with the capacity to learn
   </entry>
   <entry>
     <title>My 2015</title>
-    <url>/2015/03/31/My-2015/</url>
-    <content><![CDATA[我是一个典型的“中国式家长”抚养长大的孩子，小时候就开始“享受”所谓的“培优” - 书法，绘画，奥数，作文，英语。到了初中，项目就变成了语数外理化生。高二的时候选择了文科，政史地替代了理化生。在应试教育上，我算是“优胜者”。或许是受压迫太久了，在高考志愿中，除了华科，北外也上了志愿名单。2012年的秋天，我“如愿以偿”地去到了北京，一个崭新的地方。
-然而，大学第一年，我就厌学了。毅然决然地选择休学一年，但是为了有地方住而不用回到所谓的“家”，办理的是留级的手续。有意思的是，我的课程都踩着及格线通过了，不需要再考一遍。所以那一年，逐渐开始放飞自我。13-14年，我在图书馆里看着各式各样的书籍，从比较文学到诗词格律，从社会学到商业财务。
-14年的暑假，我被安排去一家绥芬河的俄罗斯酒店当服务员，美其名曰锻炼口语。那段日子，枯燥的生活让我十分挣扎。一周6天，每天9小时的工作，一个月1500的工资。对比我在北京当家教时，周末工作，100的时薪。在那一座中俄边境的小县城，我告诉自己，我要走得更远。回北京后，我开始准备ACCA的考试，并报名了相关的课程。也是在这一年秋天，我遇到了她。
-一路成长的经历让我只想远离自己的过去，组建自己的家庭。我太认真了，也太较真了。次年的春天，我们分开了。这场断崖式的分手，让我陷入了抑郁的沼泽。作息完全颠倒，不敢白天出门。暑期的时候，找到老师给我安排了出国交换的项目。目的地，符拉迪沃斯托克。
+    <url>/2025/03/31/Momery/My%202015/</url>
+    <content><![CDATA[
+  d8a5a6b74a89b31dbd4702ca55c39b20da2c07536c484eafce6238dc8eb25aa7e3b8ec08dd8eb0f14f2c9b36f539ec59f2da921ec7d0be1a34d57d48236d58a8499d311e6b01d3f0a1274171724dba197244c51e7b4335c2c7b83d2c11b2bab9edddc3f25e2a098948bafa8cfc27251c34ce8ee9310e8ae7dfb605499bde5868ea8e2e4712b7dbf72d625935499aa5f651212c9e0c1daca9faafd571ffd880f6ce6bcf9b8428c22ff020955d5cddefc29352e5bc1ad223d362d87f578bf1181df28e8a655499f9fdf4619e936f5a7b435b233b6aff46fb073666fbfed0e3c50b844f77a2777baaa2da6f54ad87a293cb4e3210435e5fc55896ae87b2281ee277cdd47ec23db4ad59bfd13f671ca11c3e2cae3f5dd696f20deb01cd3e16fd3569ff7a329d31a39c0a6fbb7c4ca2e82711a3f45ed26f785083f79132009e54f2c7f67f0fa7f55bed709b01a9d2a6800c5f2d0661cb75b67e1f3626ad89a28d6705ab38e137dc656bce1591b8e98d4ef44643f0287a7ae957c12cd058387d9656b4c7fb42155554f536544a62e52328397f34c4d4359ea713be3f7a125bd1cd7bded676032d83c795348f47181f459a02ffe11f74a53988f26f63f4d3e8a066688f4ad1b0f36e6361c12dc01e3c764e4d997cf4243e488aba10dec914cab699b51bf9e787cc2932b07016fa4125bbdba3c765a8ff6214982bd4d8250d7dc51921340d7b317acf3aca742f4dda914a23da5a765c058e8153dbff5aeeb7e20a50fc36382198596ad0ddbd72fe998b273c1a7f9458c064b2e8e3d649cd5a64abd3846013ace658d886445bb7c5a49ce3ce3c8a680b8e35e3ad33be5680ad6b1404dc77a5eb632deab4b14cb3688732b8e2d83f83d83c738460c0fa4e996f957d31fc7557c909704b715574670e50c845675c2941101944b61e8dea9d6e2797c288a0d7930113921319daec4b8f90419a92931161037bc82136785a868076e11cca7b36905e271227e766c9776c759e329936baf63666c82102fa6d0f344095d9f3a59a5321cb344816a9600e148ecc5360c164c7320e71cec2c2e51bb0094e47bdb99231e65782290dba6d2a0f01e6289bdf78a0ba0bccab580298b5eb52b006c442a53531d7d0f780807065c06ec04b367c6c0a1955b3e8f16e1989d737d96d6535e7bcb2a628aef070c61e81707b11fbf40837a4cff8d8c5391bd801d985d0937d082d58a2f792f2d7327efb9e48fd45c853168f4753f5a726ef602cae1df910fdf9eb7a1ef618965bdd5abe8412b17272bd75d6c43480136fbdc916dd1986854a098dc7e399b5abec5b81122dccfebfe5239f30d06efc7d3576e35f68279a90bb8044bd68eaa02f04a68ba5f3df193847fa0555fa490db90ab6c803f14cc1efdbc06f460149a31ffefd967d796963395e0e938d8a5bbdd9ecc6ef3dac6374d81952c2bb0d0df5fbeec2f0d86d1545e14591404ea8dc0923e255ceb624aec4d118019473de00621f801680f5003f7036ef4f7b8310c985e7bd9334a498eaddb9950749c6c1c49d1316910b3bfb3c28ff4f042b3901b0a4225a35c9f1975efe1d936ccaa1da7ffa399455c37281e032acecc195d1847d0587895db32f2f8bec2ab1a362742452ce2bad2520b4663cb406f6c515919a118861cbbdc6881f0b07777691712a57b191b21bd36b03eac0400f184ece5b2dc9b447f8c118c144f881c9f62b2a3e99ef7438b1b9fda913e7bb766620281b4a59f4a139477797e4f9c437f45ffbba4af180e9d8abbb5e98c003d87862a4d8bbc489a64c4ac019ffa1b854558a02f2799fc4964892818ce0b1b6d17141a957465a6459bdc83f123391554d3a9931393826f20a1797e5590b50cad7ed4dbea7427fd106db2c76241e51eadbd8d9f97d56de4d25fb0d6ce221e76e591975d59de02c6a40354c93ac48e6a44a753fb6b25a24a7a734d1cbcf851a01cfa45545863c3a2d17301203af3a897e6c1146ca1471e8be6942a36575c8f1de3ff6690a40c703ff4b042803da01d9dd90a3987795ef8ab1b847fd1f8d3f42815db0cfcb0aca08d45b192ccbe6d27f10aa991ec471634c8a90151417263ae79ad94e1aeb738b0037c0e23d13c995f01e4a2f8c13c3c5322cf4416a7884ee6f7986bc10c6a16b8cc2d0257b6108ef1a2dfbf6649eb32e0b4fd8bb94e7b2a6a33c0c01270416c30a9b73ec5adb7dc575ae3c46d5c93c04d62a77e6a71f6120760b1eaf130939d400f91945c4a850620e888efffc1165c4ca256b5f84a77fc645eb12fc2e455d7e763213344d0738c1dabdbdd0a1eb84a63e427db1aee9d9e85140007e00a72f2558186b29e01ca8d8c9df9a8829b196ac312581c0199732e09577fc747101a3de91ec18fc3d6d7e780ee37d33b48b1bfc3abca014fb6ddd6a85b2db6e4f422748065f3a3522ff76b7e0b95bbe3bd6087421014ee98ff4d81498f277ed83a34288edb7a30203e802244d64ab6a5272cc79cf5f2adf2b1e78d14a4197d672d875a10a8780ce3c43ca09bfe14c1b921c1c842a035504e9163b7395d667bf8408d3c841319739dcf52cd04326c0564a0779ba91b20148aeef52c5d453a03628
+  
+    
+      
+      
+        Hey bro, password is required here.
+      
+      
+        
+        
+      
+    
+  
+
 ]]></content>
       <categories>
-        <category>Memory</category>
+        <category>Momery</category>
       </categories>
       <tags>
-        <tag>My-past</tag>
+        <tag>momery</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>随想（一）</title>
+    <url>/2025/04/02/%E9%9A%8F%E6%83%B3/%E9%9A%8F%E6%83%B3/</url>
+    <content><![CDATA[网络社区，舆论冲突与品牌价值
+小米——性价比 vs 华为——自主研发小米——组装厂 vs 华为——全产业链
+oppo花钱找小Lin说 宣传其与两个上游生产商关于折叠屏的创新——实际上应该是为了产品价格做底衬
+同样地国家品牌美国——民主自由 vs 中国——安全可靠
+德国闪电战的本质：生产力过剩带来的家底 all in 其余生产力不足的国家
+经济基础——产品的生产力上层建筑——品牌价值
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>随想</tag>
+        <tag>灵感</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小说灵感积累（一）</title>
+    <url>/2025/04/02/%E5%B0%8F%E8%AF%B4%E7%81%B5%E6%84%9F%E7%A7%AF%E7%B4%AF/%E5%B0%8F%E8%AF%B4%E7%81%B5%E6%84%9F%E7%A7%AF%E7%B4%AF/</url>
+    <content><![CDATA[大纲
+“联邦对于理智的逻辑不敏感，但是对于实力的逻辑极其敏感，除非遇到不可逾越的障碍，否则他们会将自己的权力和影响力扩散到直接的每一个角落。——George Kennan”
+分配：组织先分第一层，资本分第二层，剩下的劳动力去分
+养尊处优-气势
+倭寇 不可不绞 不可全绞
+在时代的冲击下，传统秩序正在崩塌，新的共识正在形成
+《逃避自由》权威主义哲学中，并不存在平等概念——这里的世界就是由有权力者和无权力者、优等人和劣等人组成的
+权威主义哲学基本是相对的，虚无的——内心无原则
+权威主义哲学是“共生”关系——相互依赖，无法独立存在
+从心理学角度来看，渴求权力并不根植于力量，而是根植于软弱
+一种情况：使别人成为自我的一部分，扩大自我，并获得独立的自我所缺乏的力量。另一种情况：把自我消解在一个外在的权力中，从而丢失自我。
+“我点燃了火焰，但我控制不了它”
+“保留自己认同的社会角色”
+《月夜》“凡人把事情早做100年，就能起到上帝的作用”
+天空无法获取化学能（石油，天然气）需要电能（太阳能发电）
+需要不计代价去做一件事情的时候，请思考你是否就是那个代价需要顾全大局的时候，请思考你是否在大局之内需要鼓励你去做的事情，请思考代价是什么需要禁止你去做的事情，请思考是否有利润空间
+绝对零度 - 超导 - 不需要电力来提供能量？？
+]]></content>
+      <categories>
+        <category>小说灵感积累</category>
+      </categories>
+      <tags>
+        <tag>灵感</tag>
+        <tag>小说</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Consumer and Management</title>
+    <url>/2025/03/27/Self-constructed%20Models/Consumer-and-Management/</url>
+    <content><![CDATA[
+]]></content>
+      <categories>
+        <category>Self-constructed Models</category>
+      </categories>
+      <tags>
+        <tag>consumer</tag>
+        <tag>management</tag>
+        <tag>segmentation</tag>
+        <tag>conflict-of-interest</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/timeline/index.html</url>
+    <content><![CDATA[
+        
+          2025
+
+        
+      
+        
+          16th Apr
+
+        
+        Graduation ceremony
+
+      
+        
+          1st Apr
+
+        
+        Suzhou Times Square Complex
+
+      
+
+
+        
+          2024
+
+        
+      
+        
+          31th Dec
+
+        
+        New Year’s Eve in Wuhan
+
+      
+        
+          Sept
+
+        
+        School starts. The first semester in XJTLU.
+
+      
+
+
+        
+          2023
+
+        
+      
+        
+          Sept
+
+        
+        School starts. The first semester in XJTLU.
+
+      
+]]></content>
+  </entry>
+  <entry>
+    <title>tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/gallery/2025-4-1/index.html</url>
+    <content><![CDATA[
+    [{"url":"http://picbed.shijun0210.top/pic25-4-1/p1.jpg","alt":"","title":""},{"url":"http://picbed.shijun0210.top/pic25-4-1/p2.jpg","alt":"","title":""},{"url":"http://picbed.shijun0210.top/pic25-4-1/p3.jpg","alt":"","title":""},{"url":"http://picbed.shijun0210.top/pic25-4-1/p4.jpg","alt":"","title":""},{"url":"http://picbed.shijun0210.top/pic25-4-1/p5.jpg","alt":"","title":""},{"url":"http://picbed.shijun0210.top/pic25-4-1/p6.jpg","alt":"","title":""}]
+  
+
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/gallery/index.html</url>
+    <content><![CDATA[
+
+    
+    
+      2025-4-1
+      苏州 city walk
+      
+    
+  
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/cv/index.html</url>
+    <content><![CDATA[
+
+
+
+
+  
+    page {
+      background: white;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 0.5cm;
+      position: relative;
+    }
+
+    page[size="A4"] {
+      width: 21cm;
+      height: 29.7cm;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    .resume {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+    }
+
+    .leftPanel {
+      width: 30%;
+      background-color: #181F26;
+      padding: 0.5cm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .leftPanel h2 {
+      color: white;
+    }
+
+    .rightPanel {
+      width: 70%;
+      padding: 0.5cm;
+    }
+
+    .details {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item {
+      padding-bottom: 0.5cm;
+      padding-top: 0.5cm;
+    }
+
+    .item h2 {
+      margin-top: 0;
+    }
+
+    .bottomLineSeperator {
+      border-bottom: 0.05cm solid white;
+    }
+
+    .leftPanel .smallText,
+    .leftPanel .smallText,
+    .leftPanel .smallText span,
+    .leftPanel .smallText p,
+    .smallText a {
+      font-size: 14px;
+    }
+
+    .smallText,
+    .smallText span,
+    .smallText p,
+    .smallText a {
+      font-family: 'Source Sans Pro', sans-serif;
+      text-align: left;
+    }
+
+    .contactIcon {
+      width: 0.5cm;
+      text-align: center;
+    }
+
+    .leftPanel,
+    .leftPanel a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .skill {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .yearsOfExperience {
+      width: 1.6cm;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .alignleft {
+      text-align: left !important;
+      width: 1cm;
+    }
+
+    .alignright {
+      text-align: right !important;
+      width: 0.6cm;
+      margin-right: 0.1cm
+    }
+
+    .bolded {
+      font-weight: bold;
+    }
+
+    .white {
+      color: white;
+    }
+
+    h1 {
+      font-family: 'Julius Sans One', sans-serif;
+    }
+
+    h3 {
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .workExperience>ul>li ul {
+      padding-left: 0.5cm;
+      list-style-type: disc;
+    }
+
+    .workExperience>ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .workExperience>ul>li {
+      position: relative;
+      margin: 0;
+      padding-bottom: 0.5cm;
+      padding-left: 0.5cm;
+    }
+
+    .workExperience>ul>li:before {
+      background-color: #181F26;
+      width: 0.05cm;
+      content: '';
+      position: absolute;
+      top: 0.1cm;
+      bottom: -0.2cm;
+      /* change this after border removal */
+      left: 0.05cm;
+    }
+
+    .workExperience>ul>li::after {
+      content: '';
+      position: absolute;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 32 32' focusable='false'%3E%3Ccircle stroke='none' fill='%23484444' cx='16' cy='16' r='10'%3E%3C/circle%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+      left: -0.09cm;
+      top: 0;
+      width: 0.35cm;
+      height: 0.35cm;
+    }
+
+    .jobPosition {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .jobPosition span,
+    .projectName span {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+  
+
+  
+  
+    
+      
+      
+        
+        
+
+        
+          
+          
+            
+              Contact
+            
+            
+              
+                
+                (+86) 13260540210
+              
+              
+                
+                shijun0210@foxmail.com
+                
+              
+              
+                
+                Wuhan, China
+              
+            
+          
+          
+          
+            
+              Education
+            
+            
+              
+                MSc in Social Computing
+              
+              
+                Liverpool University (CN)
+              
+              
+                2023 - 2025
+              
+            
+            
+              
+                MA in Communication
+              
+              
+                Hong Kong Baptist University (CN)
+              
+              
+                2020 - 2021
+              
+            
+            
+              
+                Certificate in Russian
+              
+              
+                Far Eastern Federal University
+              
+              
+                2015 - 2016
+              
+            
+            
+              
+                Bachelor of Russian Language
+              
+              
+                Beijing Foreign Studies University
+              
+              
+                2012 - 2018
+              
+            
+          
+        
+      
+      
+        
+          
+            Jun Shi
+          
+          
+            
+              Data Analyst (PhD candidate|applying)
+            
+          
+        
+
+        
+          
+            Research Interests
+          
+          
+            
+              Management Information Systems; Diffision of Innovation; Brand Managemet; Social Network Analysis
+            
+          
+        
+        
+          
+            Skills
+          
+          
+              Quantitative research: SNA, LR, ML models (Python & R);
+              Qualitative research: focus group, interview, grounded theory;
+              Others: web programming (PHP & JS); C (learning)
+          
+        
+
+        
+        
+          
+            Work experience
+          
+          
+            
+              
+                
+                  Brand Manager
+                
+                
+                  Jun 2021 - Jun 2023
+                
+              
+              
+                
+                  HDJC Business Consulting | Wuhan
+                
+              
+              
+                Data analysis of e-commerce (Taobao)
+                Schematic design of brand communication
+                Traffic analysis of short video platforms (TikTok, Kuaishou, etc.)
+              
+            
+            
+              
+                
+                  Operation
+                
+                
+                  Oct 2019 - Jun 2020
+                
+              
+              
+                
+                  Kuaishou Inc. | Beijing
+                
+              
+              
+                kwai Class SOP design, from customer attraction to retention
+                Internet traffic deployment for short videos
+                Data analysis of Internet traffic (python & MySQL)
+              
+            
+            
+              
+                
+                  Project Manager (Management Trainee)
+                
+                
+                  Sept 2018 - May 2019
+                
+              
+              
+                
+                  Liulv Technology Inc. | Beijing
+                
+              
+              
+                Startup of online and offline channels in Tianjin Branch
+                Project management of outbound call centers
+                Data analysis of SCM
+              
+            
+            
+              
+                
+                  Brand Stategy Consultant
+                
+                
+                  Feb 2018 - Aug 2019
+                
+              
+              
+                
+                  Strong Brand Consulting | Beijing
+                
+              
+              
+                Brand asset auditing
+                Consulting projects: Mobby STEM education of TAL
+                Development of knowledge-paid courses
+              
+            
+          
+        
+
+      
+    
+  
+]]></content>
   </entry>
 </search>
